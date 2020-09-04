@@ -81,5 +81,15 @@ These key-value pairs can optionally be set in application.properties. They have
 
 - `com.rantcrypto.cmc.api.v1.key.info-endpoint=/v1/key/info`
 
+## Current testing status
+
+Unit Testing Coverage: 64.7%
+
+- [x] Basic CoinMarketCap plan endpoints
+- [ ] Hobbyist CoinMarketCap plan endpoints
+- [ ] Startup CoinMarketCap plan endpoints
+- [ ] Standard CoinMarketCap plan endpoints
+- [ ] Enterprise CoinMarketCap plan endpoints
+
 ## Reporting an Issue
 If you encounter an issue and you believe this service to be the cause, not the CoinMarketCap API nor your environment, please report an issue in this repository.
