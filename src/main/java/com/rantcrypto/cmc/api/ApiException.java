@@ -15,7 +15,7 @@ import java.util.TimeZone;
  */
 public class ApiException {
 
-	private CoinMarketCapStatus status;
+	private ApiExceptionStatus status;
 
 	public ApiException(Long statusCode, String error) {
 		TimeZone timezone = TimeZone.getTimeZone("UTC");
@@ -23,7 +23,7 @@ public class ApiException {
 		formatter.setTimeZone(timezone);
 		Date currentDateTime = new Date();
 		
-		this.status = new CoinMarketCapStatus();
+		this.status = new ApiExceptionStatus();
 		status.setTimestamp(formatter.format(currentDateTime));
 		status.setError_code(statusCode);
 		status.setError_message(error);
@@ -31,16 +31,7 @@ public class ApiException {
 		status.setCredit_count(0L);
 	}
 
-	public CoinMarketCapStatus getStatus() {
+	public ApiExceptionStatus getStatus() {
 		return status;
-	}
-
-	public void setStatus(CoinMarketCapStatus status) {
-		this.status = status;
-	}
-
-	@Override
-	public String toString() {
-		return "CoinMarketCapException [status=" + status + "]";
 	}
 }

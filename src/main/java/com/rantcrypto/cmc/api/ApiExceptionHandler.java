@@ -43,9 +43,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	    case "java.lang.Double":
 	    	requiredType = "number";
 	    	break;
-	    case "java.lang.String":
-	    	requiredType = "string";
-	    	break;
 	    case "java.lang.Boolean":
 	    	requiredType = "boolean";
 	    	break;
@@ -60,67 +57,5 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	    
 	    return new ResponseEntity<Object>(
 	    		coinMarketCapException, new HttpHeaders(), HttpStatus.BAD_REQUEST);
-	}
-}
-/**
- * A simple POJO matching the content of a CoinMarketCap status object. This object is included in 
- * the response body of any CoinMarketCap API request.
- * 
- * @author Phillip Groves
- */
-final class CoinMarketCapStatus {
-
-	private String timestamp;
-	private Long error_code;
-	private String error_message;
-	private Long elapsed;
-	private Long credit_count;
-	
-	
-	public String getTimestamp() {
-		return timestamp;
-	}
-	
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-	
-	public Long getError_code() {
-		return error_code;
-	}
-	
-	public void setError_code(Long error_code) {
-		this.error_code = error_code;
-	}
-	
-	public String getError_message() {
-		return error_message;
-	}
-	
-	public void setError_message(String error_message) {
-		this.error_message = error_message;
-	}
-	
-	public Long getElapsed() {
-		return elapsed;
-	}
-	
-	public void setElapsed(Long elapsed) {
-		this.elapsed = elapsed;
-	}
-	
-	public Long getCredit_count() {
-		return credit_count;
-	}
-	
-	public void setCredit_count(Long credit_count) {
-		this.credit_count = credit_count;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return "CoinMarketCapStatus [timestamp=" + timestamp + ", error_code=" + error_code + ", error_message="
-				+ error_message + ", elapsed=" + elapsed + ", credit_count=" + credit_count + "]";
 	}
 }

@@ -48,7 +48,9 @@ public abstract class CoinMarketCapService {
 	 * 
 	 * @return JSON response
 	 */
-	protected ResponseEntity<String> getResponseFromEndpoint(String endpoint, HashMap<String, String> paramMap) {
+	public ResponseEntity<String> getResponseFromEndpoint(String endpoint, HashMap<String, String> paramMap) {
+		
+		
 		if (this.httpEntity == null) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -68,6 +70,7 @@ public abstract class CoinMarketCapService {
 		try {
 			response = restTemplate.exchange(
 					formattedUrl, HttpMethod.GET, httpEntity, String.class);
+			
 		} catch (HttpStatusCodeException exception) {
 		    return new ResponseEntity<String>(exception.getResponseBodyAsString(), exception.getStatusCode());
 		}
@@ -84,7 +87,7 @@ public abstract class CoinMarketCapService {
 	 * 
 	 * @return JSON response
 	 */
-	protected ResponseEntity<String> getResponseFromEndpoint(String endpoint) {
+	public ResponseEntity<String> getResponseFromEndpoint(String endpoint) {
 		return getResponseFromEndpoint(endpoint, null);
 	}
 	
@@ -96,7 +99,7 @@ public abstract class CoinMarketCapService {
 	 * @param paramMap HashMap of key-value pairs
 	 * @return Formatted query parameters that can be appended to an endpoint
 	 */
-	protected String getFormattedParams(HashMap<String, String> paramMap) {
+	public String getFormattedParams(HashMap<String, String> paramMap) {
 		StringBuilder paramStringBuilder = new StringBuilder("");
 		if (paramMap != null) {
 			boolean isFirstParam = true;
