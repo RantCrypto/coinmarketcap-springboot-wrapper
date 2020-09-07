@@ -20,8 +20,14 @@ public class PartnersService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.partners.flipside-crypto-fcas-listings-latest-endpoint:/v1/partners/flipside-crypto/fcas/listings/latest}") 
 	private String PARTNERS_FLIPSIDE_CRYPTO_FCAS_LISTINGS_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.partners.flipside-crypto-fcas-listings-latest-endpoint.cache-time:-1}") 
+	private Long PARTNERS_FLIPSIDE_CRYPTO_FCAS_LISTINGS_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.partners.flipside-crypto-fcas-quotes-latest-endpoint:/v1/partners/flipside-crypto/fcas/quotes/latest}") 
 	private String PARTNERS_FLIPSIDE_CRYPTO_FCAS_QUOTES_LATEST_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.partners.flipside-crypto-fcas-quotes-latest-endpoint.cache-time:-1}") 
+	private String PARTNERS_FLIPSIDE_CRYPTO_FCAS_QUOTES_LATEST_ENDPOINT_CACHE_TIME;
 	
 	
 	/**

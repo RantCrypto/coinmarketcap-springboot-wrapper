@@ -20,6 +20,9 @@ public class ToolsService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.tools.price-conversion-endpoint:/v1/tools/price-conversion}") 
 	private String TOOLS_PRICE_CONVERSION_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.tools.price-conversion-endpoint.cache-time:-1}") 
+	private String TOOLS_PRICE_CONVERSION_ENDPOINT_CACHE_TIME;
+	
 	
 	/**
 	 * <p>Convert an amount of one cryptocurrency or fiat currency into one or more different currencies utilizing the latest market rate for each currency. You may optionally pass a historical timestamp as time to convert values based on historical rates (as your API plan supports).</p>

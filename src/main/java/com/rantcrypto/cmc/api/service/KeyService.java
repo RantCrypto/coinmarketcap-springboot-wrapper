@@ -18,6 +18,9 @@ public class KeyService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.key.info-endpoint:/v1/key/info}") 
 	private String KEY_INFO_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.key.info-endpoint.cache-time:-1}") 
+	private Long KEY_INFO_ENDPOINT_CACHE_TIME;
+	
 	
 	/**
 	 * <p>Returns API key details and usage stats. This endpoint can be used to programmatically monitor your key usage compared to the rate limit and daily/monthly credit limits available to your API plan. You may use the Developer Portal's account dashboard as an alternative to this endpoint.</p>

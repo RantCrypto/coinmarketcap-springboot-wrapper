@@ -20,6 +20,9 @@ public class FiatService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.fiat.map-endpoint:/v1/fiat/map}") 
 	private String FIAT_MAP_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.fiat.map-endpoint:/v1/fiat/map.cache-time:-1}") 
+	private Long FIAT_MAP_ENDPOINT_CACHE_TIME;
+	
 
 	/**
 	 * <p>Returns a mapping of all supported fiat currencies to unique CoinMarketCap ids. Per CoinMarketCap Best Practices we recommend utilizing CMC ID instead of currency symbols to securely identify assets with our other endpoints and in your own application logic.</p>

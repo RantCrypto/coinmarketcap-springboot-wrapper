@@ -20,8 +20,14 @@ public class GlobalMetricsService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.global-metrics.quotes-latest-endpoint:/v1/global-metrics/quotes/latest}") 
 	private String GLOBAL_METRICS_QUOTES_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.global-metrics.quotes-latest-endpoint.cache-time:-1}") 
+	private Long GLOBAL_METRICS_QUOTES_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.global-metrics.quotes-historical-endpoint:/v1/global-metrics/quotes/historical}") 
 	private String GLOBAL_METRICS_QUOTES_HISTORICAL_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.global-metrics.quotes-historical-endpoint.cache-time:-1}") 
+	private Long GLOBAL_METRICS_QUOTES_HISTORICAL_ENDPOINT_CACHE_TIME;
 
 	
 	/**
