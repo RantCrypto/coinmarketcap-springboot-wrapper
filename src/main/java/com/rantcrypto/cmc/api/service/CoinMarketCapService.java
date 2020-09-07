@@ -41,7 +41,7 @@ public abstract class CoinMarketCapService {
 	/**
 	 * Sends a request to the CoinMarketCap REST API at the given endpoint. Endpoint string should 
 	 * begin with /v[version]/ (e.g. /v1/) and should not include query parameters. To include query 
-	 * parameters, supply a HashMap<String, String> HashMap of key-value pairs.
+	 * parameters, supply a HashMap&lt;String, String&gt; HashMap of key-value pairs.
 	 * 
 	 * @param endpoint Endpoint URI beginning with /v[version]/
 	 * @param paramMap Request query parameters
@@ -81,7 +81,7 @@ public abstract class CoinMarketCapService {
 	/**
 	 * Sends a request to the CoinMarketCap REST API at the given endpoint. Endpoint string should 
 	 * begin with /v[version]/ (e.g. /v1/) and should not include query parameters. To include query 
-	 * parameters, supply a HashMap<String, String> HashMap of key-value pairs.
+	 * parameters, supply a HashMap&lt;String, String&gt; HashMap of key-value pairs.
 	 * 
 	 * @param endpoint Endpoint URI beginning with /v[version]/
 	 * 

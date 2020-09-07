@@ -21,7 +21,7 @@ public class ToolsService extends CoinMarketCapService {
 	private String TOOLS_PRICE_CONVERSION_ENDPOINT;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.tools.price-conversion-endpoint.cache-time:-1}") 
-	private String TOOLS_PRICE_CONVERSION_ENDPOINT_CACHE_TIME;
+	private Long TOOLS_PRICE_CONVERSION_ENDPOINT_CACHE_TIME;
 	
 	
 	/**
