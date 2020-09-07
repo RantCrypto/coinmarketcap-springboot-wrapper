@@ -20,8 +20,7 @@ For more information on REST endpoints and CoinMarketCap data, check out the Jav
 There are a few important things to note before using this service:
 - For security and cost-saving in commercial projects, it is *highly* recommended to implement a caching mechanism.
 - Use CoinMarketCap id's instead of symbols or slugs where possible. Some cryptocurrencies share the same symbol.
-- ~~By default, this service will reach out to the CoinMarketCap sandbox at `https://sandbox-api.coinmarketcap.com`. To connect to the real-time pro API, set `com.rantcrypto.cmc.api.v1.base-url=https://pro-api.coinmarketcap.com` in application.properties~~
-- CoinMarketCap's sandbox environment is temporarily unavailable. `com.rantcrypto.cmc.api.v1.base-url=https://pro-api.coinmarketcap.com` is temporarily set in application.properties by default.
+- By default, this service will reach out to the CoinMarketCap sandbox at `https://sandbox-api.coinmarketcap.com`. To connect to the real-time pro API, set `com.rantcrypto.cmc.api.v1.base-url=https://pro-api.coinmarketcap.com` in application.properties
 
 ## Roadmap
 The status of the project roadmap can be found below:
