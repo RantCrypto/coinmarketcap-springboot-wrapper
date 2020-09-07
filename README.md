@@ -41,7 +41,7 @@ The status of the project roadmap can be found below:
 ### Required
 These key-values pairs should be set in application.properties for this service to work correctly
 - `com.rantcrypto.cmc.api.v1.api-key=<your-api-key>`
-- `com.rantcrypto.cmc.api.v1.base-url=https://pro-api.coinmarketcap.com` - temporarily required while sandbox is unavailable; also required in production environment
+- `com.rantcrypto.cmc.api.v1.base-url=https://pro-api.coinmarketcap.com` if running is in a production environment
 
 ### Optional
 These key-value pairs can optionally be set in application.properties. They have default values, which are displayed below:
