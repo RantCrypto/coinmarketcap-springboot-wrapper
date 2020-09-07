@@ -64,7 +64,7 @@ public abstract class CoinMarketCapService {
 		ResponseEntity<String> response = null;
 		String formattedUrl = CMC_BASE_URL + endpoint;
 		
-		if (paramMap != null && paramMap.entrySet().size() > 0) 
+		if (paramMap != null) 
 			formattedUrl += this.getFormattedParams(paramMap);
 		
 		try {
@@ -75,7 +75,7 @@ public abstract class CoinMarketCapService {
 		    return new ResponseEntity<String>(exception.getResponseBodyAsString(), exception.getStatusCode());
 		}
 		
-		return new ResponseEntity<String>((response != null ? response.getBody() : null), HttpStatus.OK);
+		return new ResponseEntity<String>(response.getBody(), HttpStatus.OK);
 	}
 	
 	/**
