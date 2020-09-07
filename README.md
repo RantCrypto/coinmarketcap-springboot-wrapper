@@ -86,7 +86,7 @@ These key-value pairs can optionally be set in application.properties. They have
 Unit Testing Coverage: 64.7%
 
 - [x] Basic CoinMarketCap plan endpoints
-- [ ] Hobbyist CoinMarketCap plan endpoints
+- [x] Hobbyist CoinMarketCap plan endpoints
 - [ ] Startup CoinMarketCap plan endpoints
 - [ ] Standard CoinMarketCap plan endpoints
 - [ ] Enterprise CoinMarketCap plan endpoints
