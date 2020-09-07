@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.rantcrypto.cmc.api.ApiExceptionStatus;
+import com.rantcrypto.cmc.api.model.ApiExceptionStatus;
 
 @SpringBootTest
 public class ApiExceptionStatusTests {
