@@ -90,7 +90,7 @@ Unit Testing Coverage: `100%`
 - [x] Standard CoinMarketCap plan endpoints
 - [x] Enterprise CoinMarketCap plan endpoints
 
-![Eclipse Code Coverage](https://imgur.com/Nm5Iza9)
+![Eclipse Code Coverage](https://i.imgur.com/Nm5Iza9.png)
 
 ## Report an Issue
 If you encounter an issue and you believe this service to be the cause, not the CoinMarketCap API nor your environment, please report an issue in this repository.
