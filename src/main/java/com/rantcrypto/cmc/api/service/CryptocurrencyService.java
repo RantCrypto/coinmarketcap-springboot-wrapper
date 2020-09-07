@@ -20,32 +20,62 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.map-endpoint:/v1/cryptocurrency/map}") 
 	private String CRYPTOCURRENCY_MAP_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.map-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_MAP_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.info-endpoint:/v1/cryptocurrency/info}") 
 	private String CRYPTOCURRENCY_INFO_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.info-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_INFO_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.listings-latest-endpoint:/v1/cryptocurrency/listings/latest}") 
 	private String CRYPTOCURRENCY_LISTINGS_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.listings-latest-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_LISTINGS_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.listings-historical-endpoint:/v1/cryptocurrency/listings/historical}") 
 	private String CRYPTOCURRENCY_LISTINGS_HISTORICAL_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.listings-historical-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_LISTINGS_HISTORICAL_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.quotes-latest-endpoint:/v1/cryptocurrency/quotes/latest}") 
 	private String CRYPTOCURRENCY_QUOTES_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.quotes-latest-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_QUOTES_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.quotes-historical-endpoint:/v1/cryptocurrency/quotes/historical}") 
 	private String CRYPTOCURRENCY_QUOTES_HISTORICAL_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.quotes-historical-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_QUOTES_HISTORICAL_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.market-pairs-latest-endpoint:/v1/cryptocurrency/market-pairs/latest}") 
 	private String CRYPTOCURRENCY_MARKET_PAIRS_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.market-pairs-latest-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_MARKET_PAIRS_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.ohlcv-latest-endpoint:/v1/cryptocurrency/ohlcv/latest}") 
 	private String CRYPTOCURRENCY_OHLCV_LATEST_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.ohlcv-latest-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_OHLCV_LATEST_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.ohlcv-historical-endpoint:/v1/cryptocurrency/ohlcv/historical}") 
 	private String CRYPTOCURRENCY_OHLCV_HISTORICAL_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.ohlcv-historical-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_OHLCV_HISTORICAL_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.price-performance-stats-latest-endpoint:/v1/cryptocurrency/price-performance-stats/latest}") 
 	private String CRYPTOCURRENCY_PRICE_PERFORMANCE_STATS_LATEST_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.cryptocurrency.price-performance-stats-latest-endpoint.cache-time:-1}") 
+	private Long CRYPTOCURRENCY_PRICE_PERFORMANCE_STATS_LATEST_ENDPOINT_CACHE_TIME;
 	
 	
 	/**

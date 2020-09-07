@@ -20,23 +20,44 @@ public class ExchangeService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.map-endpoint:/v1/exchange/map}") 
 	private String EXCHANGE_MAP_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.map-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_MAP_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.info-endpoint:/v1/exchange/info}") 
 	private String EXCHANGE_INFO_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.info-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_INFO_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.listings-latest-endpoint:/v1/exchange/listings/latest}") 
 	private String EXCHANGE_LISTINGS_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.listings-latest-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_LISTINGS_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.listings-latest-endpoint:/v1/exchange/listings/historical}") 
 	private String EXCHANGE_LISTINGS_HISTORICAL_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.listings-latest-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_LISTINGS_HISTORICAL_ENDPOINT_CACHE_TIME;
 	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.quotes-latest-endpoint:/v1/exchange/quotes/latest}") 
 	private String EXCHANGE_QUOTES_LATEST_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.quotes-latest-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_QUOTES_LATEST_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.quotes-historical-endpoint:/v1/exchange/quotes/historical}") 
 	private String EXCHANGE_QUOTES_HISTORICAL_ENDPOINT;
 	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.quotes-historical-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_QUOTES_HISTORICAL_ENDPOINT_CACHE_TIME;
+	
 	@Value("${com.rantcrypto.cmc.api.v1.exchange.market-pairs-latest-endpoint:/v1/exchange/market-pairs/latest}") 
 	private String EXCHANGE_MARKET_PAIRS_LATEST_ENDPOINT;
+	
+	@Value("${com.rantcrypto.cmc.api.v1.exchange.market-pairs-latest-endpoint.cache-time:-1}") 
+	private Long EXCHANGE_MARKET_PAIRS_LATEST_ENDPOINT_CACHE_TIME;
 	
 	
 	/**
