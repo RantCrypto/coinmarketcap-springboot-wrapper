@@ -1,3 +1,6 @@
 com.rantcrypto.cmc.api
 com.rantcrypto.cmc.api.controller
+com.rantcrypto.cmc.api.model
 com.rantcrypto.cmc.api.service
+com.rantcrypto.cmc.api.test
+com.rantcrypto.cmc.api.test.controller
