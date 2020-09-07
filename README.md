@@ -29,7 +29,7 @@ The status of the project roadmap can be found below:
 - [x] Add documentation which correlates to the official documentation at https://coinmarketcap.com/api/documentation/v1/ and generate Javadoc
 - [x] Handle all exceptions from the CoinMarketCap API and forward them back to the client with the same status code and response body
 - [x] Configure the service easily through application.properties file. Change the base url (sandbox or pro) and add your own API key
-- [ ] JUnit unit testing for all endpoints
+- [x] JUnit unit testing for all endpoints
 - [ ] A simple caching mechanism which is configurable in application.properties
 - [ ] Add support for simple JSON transformations in application.properties
 - [ ] Add profiles to automatically use CoinMarketCap's sandbox API in dev/test environments, and their pro API in production environment
@@ -82,13 +82,15 @@ These key-value pairs can optionally be set in application.properties. They have
 
 ## Current testing status
 
-Unit Testing Coverage: `81.9%`
+Unit Testing Coverage: `100%`
 
 - [x] Basic CoinMarketCap plan endpoints
 - [x] Hobbyist CoinMarketCap plan endpoints
-- [ ] Startup CoinMarketCap plan endpoints
-- [ ] Standard CoinMarketCap plan endpoints
-- [ ] Enterprise CoinMarketCap plan endpoints
+- [x] Startup CoinMarketCap plan endpoints
+- [x] Standard CoinMarketCap plan endpoints
+- [x] Enterprise CoinMarketCap plan endpoints
 
-## Reporting an Issue
+![Eclipse Code Coverage](https://i.imgur.com/Nm5Iza9.png)
+
+## Report an Issue
 If you encounter an issue and you believe this service to be the cause, not the CoinMarketCap API nor your environment, please report an issue in this repository.
