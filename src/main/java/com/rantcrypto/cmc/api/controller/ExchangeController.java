@@ -27,7 +27,7 @@ import com.rantcrypto.cmc.api.service.ExchangeService;
  * @author Phillip Groves
  */
 @RestController
-@RequestMapping(path = "v1/blockchain")
+@RequestMapping(path = "v1/exchange")
 public class ExchangeController {
 
 	@Autowired
