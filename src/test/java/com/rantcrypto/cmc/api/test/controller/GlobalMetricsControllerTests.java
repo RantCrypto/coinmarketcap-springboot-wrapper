@@ -19,7 +19,7 @@ import com.rantcrypto.cmc.api.ApiExceptionHandler;
 import com.rantcrypto.cmc.api.controller.GlobalMetricsController;
 
 /**
- * Credit cost of all tests combined: 1
+ * Credit cost of all tests combined: 3
  * 
  * @author Phillip Groves
  */
@@ -43,9 +43,27 @@ class GlobalMetricsControllerTests {
     }
     
     @Test
-    void testQuotesHistoricalStatusOk() throws Exception {
+    void testQuotesLatestStatusOk() throws Exception {
         MockHttpServletResponse result = mockMvc
         		.perform(get("/v1/global-metrics/quotes/latest"))
+        		.andExpect(status().isOk())
+        		.andReturn().getResponse();
+        
+        assertEquals(HttpStatus.OK.value(), result.getStatus());
+    }
+    
+    @Test
+    void testQuotesHistoricalStatusOk() throws Exception {
+        MockHttpServletResponse result = mockMvc
+        		.perform(get("/v1/global-metrics/quotes/historical"))
+        		.andExpect(status().isOk())
+        		.andReturn().getResponse();
+        
+        assertEquals(HttpStatus.OK.value(), result.getStatus());
+        
+        // covering edge case of start, limit being null
+        result = mockMvc
+        		.perform(get("/v1/global-metrics/quotes/historical?count=10"))
         		.andExpect(status().isOk())
         		.andReturn().getResponse();
         

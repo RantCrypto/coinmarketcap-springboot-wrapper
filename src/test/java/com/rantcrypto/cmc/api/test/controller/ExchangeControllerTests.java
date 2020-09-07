@@ -19,7 +19,7 @@ import com.rantcrypto.cmc.api.ApiExceptionHandler;
 import com.rantcrypto.cmc.api.controller.ExchangeController;
 
 /**
- * Credit cost of all tests combined: 2
+ * Credit cost of all tests combined: 11
  * <p><b>If you are not connecting to the sandbox API, some of these tests 
  * may fail depending on your CoinMarketCap plan.</b></p>
  * 
@@ -114,6 +114,14 @@ class ExchangeControllerTests {
     @Test
     void testQuotesHistoricalStatusOk() throws Exception {
         MockHttpServletResponse result = mockMvc
+        		.perform(get("/v1/exchange/quotes/historical?id=270&count=10"))
+        		.andExpect(status().isOk())
+        		.andReturn().getResponse();
+        
+        assertEquals(HttpStatus.OK.value(), result.getStatus());
+        
+        // covering edge case of count field being null
+        result = mockMvc
         		.perform(get("/v1/exchange/quotes/historical?id=270"))
         		.andExpect(status().isOk())
         		.andReturn().getResponse();

@@ -19,7 +19,7 @@ import com.rantcrypto.cmc.api.ApiExceptionHandler;
 import com.rantcrypto.cmc.api.controller.ToolsController;
 
 /**
- * Credit cost of all tests combined: 1
+ * Credit cost of all tests combined: 2
  * 
  * @author Phillip Groves
  */
@@ -50,5 +50,13 @@ class ToolsControllerTests {
         		.andReturn().getResponse();
         
         assertEquals(HttpStatus.OK.value(), result.getStatus());
+        
+        // covering edge case of amount field being null, which is required	
+        result = mockMvc
+        		.perform(get("/v1/tools/price-conversion?id=1"))
+        		.andExpect(status().isBadRequest())
+        		.andReturn().getResponse();
+        
+        assertEquals(HttpStatus.BAD_REQUEST.value(), result.getStatus());
     }
 }
