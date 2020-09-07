@@ -82,7 +82,7 @@ These key-value pairs can optionally be set in application.properties. They have
 
 ## Current testing status
 
-Unit Testing Coverage: 64.7%
+Unit Testing Coverage: `81.9%`
 
 - [x] Basic CoinMarketCap plan endpoints
 - [x] Hobbyist CoinMarketCap plan endpoints
