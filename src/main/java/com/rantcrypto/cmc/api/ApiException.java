@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+import com.rantcrypto.cmc.api.model.ApiExceptionStatus;
+
 /**
  * A simple POJO matching the content of a CoinMarketCap error object. This object only contains an object 
  * called status which holds error code, message, etc.

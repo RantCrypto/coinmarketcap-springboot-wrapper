@@ -45,7 +45,7 @@ public class BlockchainController {
 	 * @return Latest blockchain statistics data for 1 or more blockchains.
 	 */
 	@GetMapping(path = "statistics/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getStatisticsLatest(
+	public ResponseEntity<Object> getStatisticsLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String symbol,
 			@RequestParam(required = false) String slug) {

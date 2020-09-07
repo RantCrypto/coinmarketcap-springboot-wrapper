@@ -44,7 +44,7 @@ public class FiatService extends CoinMarketCapService {
 	 * 
 	 * @return Mapping of all supported fiat currencies to unique CoinMarketCap ids.
 	 */
-	public ResponseEntity<String> getMap(Long start, Long limit, String sort, Boolean includeMetals) {
+	public ResponseEntity<Object> getMap(Long start, Long limit, String sort, Boolean includeMetals) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
 		paramMap.put("limit", (limit != null ? Long.toString(limit) : null));

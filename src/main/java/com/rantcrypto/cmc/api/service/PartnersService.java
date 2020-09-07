@@ -50,7 +50,7 @@ public class PartnersService extends CoinMarketCapService {
 	 * 
 	 * @return A paginated list of FCAS scores for all cryptocurrencies currently supported by FCAS.
 	 */
-	public ResponseEntity<String> getFlipsideCryptoFcasListingsLatest(Long start, Long limit, String aux) {
+	public ResponseEntity<Object> getFlipsideCryptoFcasListingsLatest(Long start, Long limit, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
 		paramMap.put("limit", (limit != null ? Long.toString(limit) : null));
@@ -86,7 +86,7 @@ public class PartnersService extends CoinMarketCapService {
 	 * 
 	 * @return The latest FCAS score for 1 or more cryptocurrencies.
 	 */
-	public ResponseEntity<String> getFlipsideCryptoFcasQuotesLatest(String id, String slug, String symbol, String aux) {
+	public ResponseEntity<Object> getFlipsideCryptoFcasQuotesLatest(String id, String slug, String symbol, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("slug", slug);

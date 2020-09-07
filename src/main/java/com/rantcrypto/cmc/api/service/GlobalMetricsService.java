@@ -45,7 +45,7 @@ public class GlobalMetricsService extends CoinMarketCapService {
 	 * 
 	 * @return The latest market quote for 1 or more cryptocurrencies.
 	 */
-	public ResponseEntity<String> getQuotesLatest(String convert, String convertId) {
+	public ResponseEntity<Object> getQuotesLatest(String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("convert", convert);
 		paramMap.put("convert_id", convertId);
@@ -104,7 +104,7 @@ public class GlobalMetricsService extends CoinMarketCapService {
 	 * 
 	 * @return An interval of historical global cryptocurrency market metrics based on time and interval parameters.
 	 */
-	public ResponseEntity<String> getQuotesHistorical(String timeStart, String timeEnd, Long count, String interval, String convert,
+	public ResponseEntity<Object> getQuotesHistorical(String timeStart, String timeEnd, Long count, String interval, String convert,
 			String convertId, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("time_start", timeStart);

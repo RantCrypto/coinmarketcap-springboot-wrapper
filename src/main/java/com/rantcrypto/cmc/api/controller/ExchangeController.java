@@ -58,7 +58,7 @@ public class ExchangeController {
 	 * @return Paginated list of all active cryptocurrency exchanges
 	 */
 	@GetMapping(path = "map", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getMap(
+	public ResponseEntity<Object> getMap(
 			@RequestParam(required = false, name = "listing_status") String listingStatus, 
 			@RequestParam(required = false) String slug,
 			@RequestParam(required = false) Long start, 
@@ -89,7 +89,7 @@ public class ExchangeController {
 	 * @return All static metadata for one or more exchanges.
 	 */
 	@GetMapping(path = "info", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getInfo(
+	public ResponseEntity<Object> getInfo(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug,
 			@RequestParam(required = false) String aux) {
@@ -122,7 +122,7 @@ public class ExchangeController {
 	 * @return Paginated list of all cryptocurrency exchanges including the latest aggregate market data for each exchange.
 	 */
 	@GetMapping(path = "listings/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getListingsLatest(
+	public ResponseEntity<Object> getListingsLatest(
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit, 
 			@RequestParam(required = false) String sort, 
@@ -141,7 +141,7 @@ public class ExchangeController {
 	 * @return Paginated list of all cryptocurrency exchanges with historical market data for a given point in time.
 	 */
 	@GetMapping(path = "listings/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getListingsHistorical() {
+	public ResponseEntity<Object> getListingsHistorical() {
 		return this.exchangeService.getListingsHistorical();
 	}
 	
@@ -166,7 +166,7 @@ public class ExchangeController {
 	 * @return Latest aggregate market data for 1 or more exchanges.
 	 */
 	@GetMapping(path = "quotes/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesLatest(
+	public ResponseEntity<Object> getQuotesLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) String convert, 
@@ -229,7 +229,7 @@ public class ExchangeController {
 	 * @return Interval of historic quotes for any exchange.
 	 */
 	@GetMapping(path = "quotes/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesHistorical(
+	public ResponseEntity<Object> getQuotesHistorical(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false, name = "time_start") String timeStart,
@@ -269,7 +269,7 @@ public class ExchangeController {
 	 * @return All active market pairs that CoinMarketCap tracks for a given exchange.
 	 */
 	@GetMapping(path = "market-pairs/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getMarketPairsLatest(
+	public ResponseEntity<Object> getMarketPairsLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) Long start, 

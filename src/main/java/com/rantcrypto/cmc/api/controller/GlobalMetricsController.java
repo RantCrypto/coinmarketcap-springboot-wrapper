@@ -50,7 +50,7 @@ public class GlobalMetricsController {
 	 * @return The latest market quote for 1 or more cryptocurrencies.
 	 */
 	@GetMapping(path = "quotes/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesLatest(
+	public ResponseEntity<Object> getQuotesLatest(
 			@RequestParam(required = false) String convert, 
 			@RequestParam(required = false, name = "convert_id") String convertId) {
 		return this.globalMetricsService.getQuotesLatest(convert, convertId);
@@ -108,7 +108,7 @@ public class GlobalMetricsController {
 	 * @return An interval of historical global cryptocurrency market metrics based on time and interval parameters.
 	 */
 	@GetMapping(path = "quotes/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesHistorical(
+	public ResponseEntity<Object> getQuotesHistorical(
 			@RequestParam(required = false, name = "time_start") String timeStart,
 			@RequestParam(required = false, name = "time_end") String timeEnd,
 			@RequestParam(required = false) Long count,

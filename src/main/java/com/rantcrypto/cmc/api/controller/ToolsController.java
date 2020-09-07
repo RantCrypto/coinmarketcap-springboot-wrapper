@@ -61,7 +61,7 @@ public class ToolsController {
 	 * @return Converted an amount of one cryptocurrency or fiat currency into one or more different currencies
 	 */
 	@GetMapping(path = "price-conversion", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getPriceConversion(
+	public ResponseEntity<Object> getPriceConversion(
 			@RequestParam(required = false) Double amount,
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String symbol, 

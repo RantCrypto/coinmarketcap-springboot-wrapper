@@ -75,7 +75,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return A mapping of all cryptocurrencies to unique CoinMarketCap ids
 	 */
-	public ResponseEntity<String> getMap(String listingStatus, Long start, Long limit, String sort, String symbol, String aux) {
+	public ResponseEntity<Object> getMap(String listingStatus, Long start, Long limit, String sort, String symbol, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("listing_status", listingStatus);
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
@@ -110,7 +110,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return All static metadata available for one or more cryptocurrencies.
 	 */
-	public ResponseEntity<String> getInfo(String id, String slug, String symbol, String aux) {
+	public ResponseEntity<Object> getInfo(String id, String slug, String symbol, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("slug", slug);
@@ -180,7 +180,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return A paginated list of all active cryptocurrencies with latest market data.
 	 */
-	public ResponseEntity<String> getListingsLatest(Long start, Long limit, Double priceMin, Double priceMax, Double marketCapMin, Double marketCapMax, Double volume24hMin, Double volume24hMax, Double circulatingSupplyMin, Double circulatingSupplyMax, Double percentChange24hMin, Double percentChange24hMax, String convert, String convertId, String sort, String sortDir, String cryptocurrencyType, String tag, String aux) {
+	public ResponseEntity<Object> getListingsLatest(Long start, Long limit, Double priceMin, Double priceMax, Double marketCapMin, Double marketCapMax, Double volume24hMin, Double volume24hMax, Double circulatingSupplyMin, Double circulatingSupplyMax, Double percentChange24hMin, Double percentChange24hMax, String convert, String convertId, String sort, String sortDir, String cryptocurrencyType, String tag, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
 		paramMap.put("limit", (limit != null ? Long.toString(limit) : null));
@@ -255,7 +255,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return A ranked and sorted list of all cryptocurrencies for a historical UTC date.
 	 */
-	public ResponseEntity<String> getListingsHistorical(String date, Long start, Long limit, String convert, String convertId, String sort, String sortDir, String cryptocurrencyType, String aux) {
+	public ResponseEntity<Object> getListingsHistorical(String date, Long start, Long limit, String convert, String convertId, String sort, String sortDir, String cryptocurrencyType, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("date", date);
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
@@ -297,7 +297,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return The latest market quote for 1 or more cryptocurrencies.
 	 */
-	public ResponseEntity<String> getQuotesLatest(String id, String slug, String symbol, String convert, String convertId, String aux,
+	public ResponseEntity<Object> getQuotesLatest(String id, String slug, String symbol, String convert, String convertId, String aux,
 			Boolean skipInvalid) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
@@ -370,7 +370,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return An interval of historic market quotes for any cryptocurrency.
 	 */
-	public ResponseEntity<String> getQuotesHistorical(String id, String symbol, String timeStart, String timeEnd, Long count,
+	public ResponseEntity<Object> getQuotesHistorical(String id, String symbol, String timeStart, String timeEnd, Long count,
 			String interval, String convert, String convertId, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
@@ -416,7 +416,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return All active market pairs that CoinMarketCap tracks for a given cryptocurrency or fiat currency.
 	 */
-	public ResponseEntity<String> getMarketPairsLatest(String id, String slug, String symbol, Long start, Long limit, String sortDir,
+	public ResponseEntity<Object> getMarketPairsLatest(String id, String slug, String symbol, Long start, Long limit, String sortDir,
 			String sort, String aux, String matchedId, String matchedSymbol, String category, String feeType,
 			String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
@@ -459,7 +459,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return The latest OHLCV (Open, High, Low, Close, Volume) market values for one or more cryptocurrencies for the current UTC day.
 	 */
-	public ResponseEntity<String> getOhlcvLatest(String id, String symbol, String convert, String convertId, Boolean skipInvalid) {
+	public ResponseEntity<Object> getOhlcvLatest(String id, String symbol, String convert, String convertId, Boolean skipInvalid) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("symbol", symbol);
@@ -534,7 +534,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return Historical OHLCV (Open, High, Low, Close, Volume) data along with market cap for any cryptocurrency using time interval parameters.
 	 */
-	public ResponseEntity<String> getOhlcvHistorical(String id, String slug, String symbol, String timePeriod, String timeStart,
+	public ResponseEntity<Object> getOhlcvHistorical(String id, String slug, String symbol, String timePeriod, String timeStart,
 			String timeEnd, Long count, String interval, String convert, String convertId, Boolean skipInvalid) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
@@ -577,7 +577,7 @@ public class CryptocurrencyService extends CoinMarketCapService {
 	 * 
 	 * @return Price performance statistics for one or more cryptocurrencies including launch price ROI and all-time high / all-time low.
 	 */
-	public ResponseEntity<String> getPricePerformanceStatsLatest(String id, String slug, String symbol, String timePeriod,
+	public ResponseEntity<Object> getPricePerformanceStatsLatest(String id, String slug, String symbol, String timePeriod,
 			String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);

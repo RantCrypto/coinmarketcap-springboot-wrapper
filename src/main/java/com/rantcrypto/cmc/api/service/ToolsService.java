@@ -54,7 +54,7 @@ public class ToolsService extends CoinMarketCapService {
 	 * 
 	 * @return Converted an amount of one cryptocurrency or fiat currency into one or more different currencies
 	 */
-	public ResponseEntity<String> getPriceConversion(Double amount, String id, String symbol, String time, String convert,
+	public ResponseEntity<Object> getPriceConversion(Double amount, String id, String symbol, String time, String convert,
 			String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("amount", (amount != null ? Double.toString(amount) : null));

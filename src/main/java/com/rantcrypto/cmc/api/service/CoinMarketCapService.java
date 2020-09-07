@@ -48,7 +48,7 @@ public abstract class CoinMarketCapService {
 	 * 
 	 * @return JSON response
 	 */
-	public ResponseEntity<String> getResponseFromEndpoint(String endpoint, HashMap<String, String> paramMap) {
+	public ResponseEntity<Object> getResponseFromEndpoint(String endpoint, HashMap<String, String> paramMap) {
 		
 		
 		if (this.httpEntity == null) {
@@ -72,10 +72,10 @@ public abstract class CoinMarketCapService {
 					formattedUrl, HttpMethod.GET, httpEntity, String.class);
 			
 		} catch (HttpStatusCodeException exception) {
-		    return new ResponseEntity<String>(exception.getResponseBodyAsString(), exception.getStatusCode());
+		    return new ResponseEntity<Object>(exception.getResponseBodyAsString(), exception.getStatusCode());
 		}
 		
-		return new ResponseEntity<String>(response.getBody(), HttpStatus.OK);
+		return new ResponseEntity<Object>(response.getBody(), HttpStatus.OK);
 	}
 	
 	/**
@@ -87,7 +87,7 @@ public abstract class CoinMarketCapService {
 	 * 
 	 * @return JSON response
 	 */
-	public ResponseEntity<String> getResponseFromEndpoint(String endpoint) {
+	public ResponseEntity<Object> getResponseFromEndpoint(String endpoint) {
 		return getResponseFromEndpoint(endpoint, null);
 	}
 	

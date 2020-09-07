@@ -1,4 +1,4 @@
-package com.rantcrypto.cmc.api;
+package com.rantcrypto.cmc.api.model;
 
 /**
  * A simple POJO matching the content of a CoinMarketCap status object. This object is included in 

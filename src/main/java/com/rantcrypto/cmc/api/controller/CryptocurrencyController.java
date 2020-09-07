@@ -64,7 +64,7 @@ public class CryptocurrencyController {
 	 * @return Mapping of all cryptocurrencies to unique CoinMarketCap ids
 	 */
 	@GetMapping(path = "map", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getMap(
+	public ResponseEntity<Object> getMap(
 			@RequestParam(required = false, name = "listing_status") String listingStatus, 
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit,
@@ -98,7 +98,7 @@ public class CryptocurrencyController {
 	 * @return All static metadata available for one or more cryptocurrencies.
 	 */
 	@GetMapping(path = "info", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getInfo(
+	public ResponseEntity<Object> getInfo(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug,
 			@RequestParam(required = false) String symbol,
@@ -167,7 +167,7 @@ public class CryptocurrencyController {
 	 * @return Paginated list of all active cryptocurrencies with latest market data.
 	 */
 	@GetMapping(path = "listings/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getListingsLatest(
+	public ResponseEntity<Object> getListingsLatest(
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit, 
 			@RequestParam(required = false, name = "price_min") Double priceMin, 
@@ -245,7 +245,7 @@ public class CryptocurrencyController {
 	 * @return Ranked and sorted list of all cryptocurrencies for a historical UTC date.
 	 */
 	@GetMapping(path = "listings/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getListingsHistorical(
+	public ResponseEntity<Object> getListingsHistorical(
 			@RequestParam(required = false) String date, 
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit, 
@@ -287,7 +287,7 @@ public class CryptocurrencyController {
 	 * @return Latest market quote for 1 or more cryptocurrencies.
 	 */
 	@GetMapping(path = "quotes/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesLatest(
+	public ResponseEntity<Object> getQuotesLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) String symbol, 
@@ -358,7 +358,7 @@ public class CryptocurrencyController {
 	 * @return Interval of historic market quotes for any cryptocurrency.
 	 */
 	@GetMapping(path = "quotes/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getQuotesHistorical(
+	public ResponseEntity<Object> getQuotesHistorical(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String symbol, 
 			@RequestParam(required = false, name = "time_start") String timeStart,
@@ -403,7 +403,7 @@ public class CryptocurrencyController {
 	 * @return All active market pairs that CoinMarketCap tracks for a given cryptocurrency or fiat currency.
 	 */
 	@GetMapping(path = "market-pairs/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getMarketPairsLatest(
+	public ResponseEntity<Object> getMarketPairsLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) String symbol, 
@@ -445,7 +445,7 @@ public class CryptocurrencyController {
 	 * @return Latest OHLCV (Open, High, Low, Close, Volume) market values for one or more cryptocurrencies for the current UTC day.
 	 */
 	@GetMapping(path = "ohlcv/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getOhlcvLatest(
+	public ResponseEntity<Object> getOhlcvLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String symbol, 
 			@RequestParam(required = false) String convert, 
@@ -519,7 +519,7 @@ public class CryptocurrencyController {
 	 * @return Historical OHLCV (Open, High, Low, Close, Volume) data along with market cap for any cryptocurrency using time interval parameters.
 	 */
 	@GetMapping(path = "ohlcv/historical", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getOhlcvHistorical(
+	public ResponseEntity<Object> getOhlcvHistorical(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) String symbol, 
@@ -562,7 +562,7 @@ public class CryptocurrencyController {
 	 * @return Latest Price performance statistics for one or more cryptocurrencies including launch price ROI and all-time high / all-time low.
 	 */
 	@GetMapping(path = "price-performance-stats/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getPricePerformanceStatsLatest(
+	public ResponseEntity<Object> getPricePerformanceStatsLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug, 
 			@RequestParam(required = false) String symbol, 

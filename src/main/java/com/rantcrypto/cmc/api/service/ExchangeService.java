@@ -63,7 +63,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return A paginated list of all active cryptocurrency exchanges
 	 */
-	public ResponseEntity<String> getMap(String listingStatus, String slug, Long start, Long limit, String sort, String aux) {
+	public ResponseEntity<Object> getMap(String listingStatus, String slug, Long start, Long limit, String sort, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("listing_status", listingStatus);
 		paramMap.put("slug", slug);
@@ -95,7 +95,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return All static metadata for one or more exchanges.
 	 */
-	public ResponseEntity<String> getInfo(String id, String slug, String aux) {
+	public ResponseEntity<Object> getInfo(String id, String slug, String aux) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("slug", slug);
@@ -129,7 +129,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return A paginated list of all cryptocurrency exchanges including the latest aggregate market data for each exchange.
 	 */
-	public ResponseEntity<String> getListingsLatest(Long start, Long limit, String sort, String sortDir, String marketType, String aux,
+	public ResponseEntity<Object> getListingsLatest(Long start, Long limit, String sort, String sortDir, String marketType, String aux,
 			String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("start", (start != null ? Long.toString(start) : null));
@@ -150,7 +150,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return A paginated list of all cryptocurrency exchanges with historical market data for a given point in time.
 	 */
-	public ResponseEntity<String> getListingsHistorical() {
+	public ResponseEntity<Object> getListingsHistorical() {
 		return super.getResponseFromEndpoint(EXCHANGE_LISTINGS_HISTORICAL_ENDPOINT);
 	}
 
@@ -174,7 +174,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return Latest aggregate market data for 1 or more exchanges.
 	 */
-	public ResponseEntity<String> getQuotesLatest(String id, String slug, String convert, String convertId) {
+	public ResponseEntity<Object> getQuotesLatest(String id, String slug, String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("slug", slug);
@@ -184,7 +184,7 @@ public class ExchangeService extends CoinMarketCapService {
 		return super.getResponseFromEndpoint(EXCHANGE_QUOTES_LATEST_ENDPOINT, paramMap);
 	}
 
-	public ResponseEntity<String> getQuotesHistorical(String id, String slug, String timeStart, String timeEnd, Long count,
+	public ResponseEntity<Object> getQuotesHistorical(String id, String slug, String timeStart, String timeEnd, Long count,
 			String interval, String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
@@ -226,7 +226,7 @@ public class ExchangeService extends CoinMarketCapService {
 	 * 
 	 * @return All active market pairs that CoinMarketCap tracks for a given exchange.
 	 */
-	public ResponseEntity<String> getMarketPairsLatest(String id, String slug, Long start, Long limit, String aux, String matchedId,
+	public ResponseEntity<Object> getMarketPairsLatest(String id, String slug, Long start, Long limit, String aux, String matchedId,
 			String matchedSymbol, String category, String feeType, String convert, String convertId) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);

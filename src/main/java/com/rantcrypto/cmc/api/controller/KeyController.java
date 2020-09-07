@@ -45,7 +45,7 @@ public class KeyController {
 	 * @return API key details and usage stats.
 	 */
 	@GetMapping(path = "info", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getInfo() {
+	public ResponseEntity<Object> getInfo() {
 		return this.keyService.getInfo();
 	}
 }

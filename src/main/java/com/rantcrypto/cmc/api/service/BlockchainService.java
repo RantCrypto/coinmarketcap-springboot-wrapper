@@ -20,7 +20,9 @@ public class BlockchainService extends CoinMarketCapService {
 	@Value("${com.rantcrypto.cmc.api.v1.blockchain.statistics-latest-endpoint:/v1/blockchain/statistics/latest}") 
 	protected String BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT;
 	
-
+	@Value("${com.rantcrypto.cmc.api.v1.blockchain.statistics-latest-endpoint.cache-time:-1}") 
+	protected Long BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT_CACHE_TIME;
+	
 	/**
 	 * <p>Returns the latest blockchain statistics data for 1 or more blockchains. Bitcoin, Litecoin, and Ethereum are currently supported. Additional blockchains will be made available on a regular basis.</p>
 	 * 
@@ -38,12 +40,17 @@ public class BlockchainService extends CoinMarketCapService {
 	 * 
 	 * @return Latest blockchain statistics data for 1 or more blockchains.
 	 */
-	public ResponseEntity<String> getStatisticsLatest(String id, String symbol, String slug) {
+	public ResponseEntity<Object> getStatisticsLatest(String id, String symbol, String slug) {
 		HashMap<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("symbol", symbol);
 		paramMap.put("slug", slug);
 		
-		return super.getResponseFromEndpoint(BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT, paramMap);
+		if (BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT_CACHE_TIME != -1L) {
+			return super.getResponseFromEndpoint(BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT, paramMap);
+		} else {
+			return super.getResponseFromEndpoint(BLOCKCHAIN_STATISTICS_LATEST_ENDPOINT, paramMap);
+		}
+		
 	}
 }

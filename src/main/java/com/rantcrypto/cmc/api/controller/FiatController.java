@@ -51,7 +51,7 @@ public class FiatController {
 	 * @return Mapping of all supported fiat currencies to unique CoinMarketCap ids.
 	 */
 	@GetMapping(path = "map", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getMap(
+	public ResponseEntity<Object> getMap(
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit, 
 			@RequestParam(required = false) String sort, 

@@ -37,7 +37,7 @@ public class KeyService extends CoinMarketCapService {
 	 * 
 	 * @return API key details and usage stats.
 	 */
-	public ResponseEntity<String> getInfo() {	
+	public ResponseEntity<Object> getInfo() {	
 		return super.getResponseFromEndpoint(KEY_INFO_ENDPOINT);
 	}
 }

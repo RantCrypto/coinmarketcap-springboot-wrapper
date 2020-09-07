@@ -57,7 +57,7 @@ public class PartnersController {
 	 * @return A paginated list of FCAS scores for all cryptocurrencies currently supported by FCAS.
 	 */
 	@GetMapping(path = "flipside-crypto/fcas/listings/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getFlipsideCryptoFcasListingsLatest(
+	public ResponseEntity<Object> getFlipsideCryptoFcasListingsLatest(
 			@RequestParam(required = false) Long start, 
 			@RequestParam(required = false) Long limit,
 			@RequestParam(required = false) String aux) {
@@ -92,7 +92,7 @@ public class PartnersController {
 	 * @return The latest FCAS score for 1 or more cryptocurrencies.
 	 */
 	@GetMapping(path = "flipside-crypto/fcas/quotes/latest", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getFlipsideCryptoFcasQuotesLatest(
+	public ResponseEntity<Object> getFlipsideCryptoFcasQuotesLatest(
 			@RequestParam(required = false) String id, 
 			@RequestParam(required = false) String slug,
 			@RequestParam(required = false) String symbol,
